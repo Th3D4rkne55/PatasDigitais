@@ -1,0 +1,214 @@
+/*
+CSS principal do projeto Patas Digitais.
+
+Define variáveis de cores no :root para reutilização.
+
+Estiliza o body com fonte legível e cor de fundo suave.
+
+Navbar:
+- Cor de fundo azul escuro personalizada.
+- Logo ajustado em altura.
+- Links com hover destacando a cor secundária.
+- Estilo de busca com bordas arredondadas e botão estilizado.
+
+Responsividade:
+- Ajusta tamanho de fonte e alinhamento da navbar em telas menores.
+
+Cards (ex: galeria de animais):
+- Usam flexbox para layout responsivo.
+- Bordas, sombras suaves e animação de hover.
+- Imagens cobrem a área do card com 'object-fit'.
+
+Botões:
+- Cor principal no estado normal e secundária no hover.
+
+Cabeçalhos (h2):
+- Cor escura e destaque com margem superior.
+
+Container:
+- Espaço inferior para separação visual.
+
+Responsividade extra:
+- Cards ocupam 100% da largura em telas menores.
+- Altura da imagem reduzida para melhor visualização.
+
+Ideal para manter aparência moderna, limpa e consistente em toda a aplicação.
+*/
+
+
+:root {
+  --cor-principal: #2A9D8F;
+  --cor-secundaria: #F4A261;
+  --cor-escura: #264653;
+  --cor-fundo: #F8F9FA;
+  --cor-suave: #E9F5DB;
+}
+
+
+body {
+  background-color: var(--cor-fundo);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.navbar {
+  background-color: #05283d !important; /* Cor azul mais escura */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+.navbar-brand {
+  font-size: 1.4rem;
+  color: white !important;
+}
+
+.navbar-brand img {
+  max-height: 100px;
+  width: auto;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 12px;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--cor-secundaria) !important;
+}
+
+
+.navbar form input[type="search"] {
+  border-radius: 30px;
+  padding-left: 16px;
+}
+
+.navbar form button {
+  border-radius: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  background-color: white;
+  color: var(--cor-principal);
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+.navbar form button:hover {
+  background-color: var(--cor-secundaria);
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar form input[type="search"] {
+    max-width: 200px;
+  }
+
+  .navbar form button {
+    width: 100%;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.col-md-4 {
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+}
+
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  color: var(--cor-principal);
+}
+
+
+.card-img-top {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+
+.btn-primary {
+  background-color: var(--cor-principal);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-secundaria);
+  color: #fff;
+}
+
+
+h2 {
+  color: var(--cor-escura);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+.container {
+  padding-bottom: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+

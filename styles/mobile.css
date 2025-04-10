@@ -1,0 +1,117 @@
+/*
+Responsividade para telas menores (máx. 768px):
+
+Navbar:
+- Os itens da navbar colapsam em coluna (um abaixo do outro).
+- A logo tem tamanho de fonte reduzido e margem inferior.
+- Links de navegação ajustam o tamanho da fonte e espaçamento.
+- Botões e formulários de busca ocupam 100% da largura e têm margens para melhor espaçamento.
+
+Carousel (caso exista):
+- Legendas menores com padding reduzido.
+- Títulos das legendas também com fonte reduzida.
+
+Cards:
+- Cards ocupam toda a largura (1 por linha).
+- Adiciona espaçamento inferior entre eles.
+- Centraliza o conteúdo do corpo do card e aumenta a fonte do título.
+- Altura da imagem ajustada para caber melhor na tela.
+
+Botões gerais:
+- Botões ocupam a largura total para facilitar o toque em telas pequenas.
+
+Títulos (h2):
+- Tamanho da fonte reduzido e centralizado.
+
+Container:
+- Padding interno reduzido para otimizar o espaço em telas pequenas.
+
+Essas regras garantem uma boa usabilidade e visualização em dispositivos móveis.
+*/
+
+
+@media (max-width: 768px) {
+  
+  .navbar-collapse {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    margin: 5px 0;
+  }
+
+  .navbar .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar form {
+    width: 100%;
+    margin: 10px 0;
+    justify-content: center;
+  }
+
+  .navbar form input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  
+  .carousel-caption {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.1rem;
+  }
+
+
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  
+  .container {
+    padding: 10px;
+  }
+}
